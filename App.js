@@ -1,71 +1,23 @@
-var a = 0;
+function checkData() {
+    var enterEmail = document.getElementById('email').value
+    var enterPassword = document.getElementById('password').value
+    var link = document.getElementById('link')
 
-function mouseOver() {
-
-
-    const email = document.forms['form']['email'].value;
-    const pass = document.forms['form']['password'].value;
-
-
-    const emailCheck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var getEmail = localStorage.getItem('userEmail')
+    var getPassword = localStorage.getItem('userPassword')
 
 
-
-    if ((!email.match(emailCheck) || pass == "") && a == 0) {
-        buttonMoveLeft();
-        a = 1;
-        return false;
+    if (enterEmail == getEmail) {
+        if (enterPassword == getPassword) {
+            alert("Login Successfull")
+            window.open("https://amaannazim.github.io/To-Do-List/")
+        }
+        else {
+            alert("Wrong Password")
+        }
     }
-
-    if ((!email.match(emailCheck) || pass == "") && a == 1) {
-        buttonMoveRight();
-        a = 2;
-        return false;
-    }
-
-    if ((!email.match(emailCheck) || pass == "") && a == 2) {
-        buttonMoveLeft();
-        a = 1;
-        return false;
-    }
-
     else {
-
-        document.getElementById('submit').onclick(getData());
-        document.getElementById('submit').style.cursor = 'pointer';
-        return true;
-    };
-
-};
-
-
-
-
-function buttonMoveLeft() {
-
-    const button = document.getElementById('submit');
-    button.style.transform = 'translateX(200%)';
-
-};
-
-
-function buttonMoveRight() {
-
-    const button = document.getElementById('submit');
-    button.style.transform = 'translateX(0%)';
-
-};
-
-
-function resetBtn() {
-    const button = document.getElementById('submit');
-    button.style.transform = 'translateX(0%)';
-
-};
-function getData() {
-    var email = document.getElementById('email').value
-    var password = document.getElementById('password').value
-
-    localStorage.setItem('userEmail', email)
-    localStorage.setItem('userPassword', password)
+        alert("Invalid Details")
+        link.style.color = "red"
+    }
 }
