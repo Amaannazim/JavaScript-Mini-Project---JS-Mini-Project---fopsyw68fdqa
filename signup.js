@@ -69,3 +69,12 @@ function getData() {
     localStorage.setItem('userEmail', email)
     localStorage.setItem('userPassword', password)
 }
+
+// function generateOtp() {
+//     let otp = ""
+//     for (let i = 0; i < 6; i++) {
+//         otp += Math.floor(Math.random() * 10)
+//     }
+//     return Number(otp)
+// };
+// console.log(generateOtp())

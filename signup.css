@@ -13,7 +13,7 @@ body{
 }
 h1{
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
     color: white;
     letter-spacing: 1px;
     font-weight: 500;
@@ -56,12 +56,6 @@ h1{
 #submit:hover{
     transform: scale(1.2);
     background-color: transparent;
-    border: 2px solid #04ff00;
+    border: 2px solid #00fffb;
     cursor: pointer;  /* Pseodo Class property*/
-}
-#link{
-    color: white;
-    margin-left: 5px;
-    text-transform: capitalize;
-    
 }
